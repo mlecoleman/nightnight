@@ -9,13 +9,15 @@
 
 header,
 button,
-form,
-label,
-input
+p
 {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 183, 0);
     font-size: .6rem;
+}
+
+#instructions {
+    display: none;
 }
 
 div, p {
@@ -45,3 +47,7 @@ h1
     font-family: 'DS-Digital', sans-serif;
     font-size: 7rem;
 }
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
