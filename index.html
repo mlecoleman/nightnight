@@ -21,17 +21,24 @@
     </header>
     <h1>Night Night</h1>
    <div class="instructions" id="instructions">
-       <p>Night Night is a way to count sheep!<br>
-        Press play to start the blinking counter.<br>
+       <p>Count sheep the Night Night way!<br>
+        Press play to start the counter.<br>
         Count along to get the timing right.<br>
         Close your eyes & keep counting.<br>
         Keep your timing accurate!<br>
-        Open your eyes when you reach<br>
-        the chosen number.<br>
+        When you reach the magic number open your eyes.<br>
         Were you spot on, too fast, or too slow?<br>
-        Continue to play until you go<br>
-        Night Night.
+        Repeat play until you go Night Night.
         </p>
+        <form>
+            <input type="submit" value="Play" class="submit">
+            <label for="count">Count Up to:</label><br>
+            <input type="number" id="count" name="time" value="60">
+            <p class="units">seconds</p>
+            <label for="time">Lock Screen After:</label><br>
+            <input type="number" id="time" name="time" value="20">
+            <p class="units">minutes</p>
+        </form>
     </div>
     <div class="timer">00</div>
     <script src="./script.js"></script>
