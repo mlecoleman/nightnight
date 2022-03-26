@@ -24,9 +24,14 @@ buttonStart.addEventListener('click', () => {
 })
 
 function startTime(){
+  let count;
+  count = Number(countInput.value);
   seconds++;
   outputSeconds.innerHTML = seconds;
   second.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`;
+  if(seconds >= count){
+    seconds = 0;
+  }
 }
  
 
