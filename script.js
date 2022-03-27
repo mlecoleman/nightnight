@@ -1,4 +1,4 @@
-//Dropdown window
+//Dropdown Div w/ instructions & settings options
 const targetDiv = document.getElementById("instructions");
 const howTo = document.getElementById("howto");
 howTo.onclick = function () {
@@ -24,8 +24,7 @@ buttonStart.addEventListener('click', () => {
 })
 
 function startTime(){
-  let count;
-  count = Number(countInput.value);
+  let count = Number(countInput.value);
   seconds++;
   outputSeconds.innerHTML = seconds;
   second.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`;
@@ -34,20 +33,37 @@ function startTime(){
   }
 }
  
+//Play time user input & Wake Lock
 
-
-
-
-//const instructions = document.querySelector('.play');
-
-//instructions.onclick = function() {
-//   console.log('clicked!');
-//  }
-
-/*
-function timer(seconds) {
-  setInterval(function() {
-    seconds++;
-  }, 1000); 
+let wakeLock = null
+ 
+if('wakeLock' in navigator) {
+  //Wake Lock is supported
+  document.getElementById("wakelockalert").innerText = '';
+} else {
+  document.getElementById("wakelockalert").innerText = 'WAKE LOCK IS NOT SUPPORTED - PLEASE USE A DIFFERENT BROWSER';
 }
-*/
+
+
+
+
+
+
+
+
+/*const acquireLock = async () => {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen')
+  } catch (err) {
+    console.log(`${err.name}, ${err.message}`)
+  }
+}
+
+function tryKeepScreenAlive(minutes) {
+  navigator.wakeLock.request("screen").then(lock => {
+    setTimeout(() => lock.release(), minutes * 60 * 1000);
+  });
+}
+
+tryKeepScreenAlive(10);*/
+

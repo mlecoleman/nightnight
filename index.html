@@ -5,41 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
 
-    <link href="http://fonts.cdnfonts.com/css/ds-digital" rel="stylesheet">
+
+    <link href="http://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
     
-    <link rel="stylesheet" href="/css/default.css">
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/default.css" rel="stylesheet">
+    <link href="./css/medium.css" rel="stylesheet">
+    <link href="./css/large.css" rel="stylesheet">
 
     <title>Night Night</title>
 </head>
 <body>
     <header>
-            <button class="play" id="howto">How To Play</button>
+            <button class="play" id="howto">Click To Play</button>
     </header>
     <h1>Night Night</h1>
    <div class="instructions" id="instructions">
        <p>Count sheep the Night Night way!<br>
-        Press play to start the counter.<br>
+        The play button below starts the counter.<br>
         Count along to get the timing right.<br>
         Close your eyes & keep counting.<br>
         Keep your timing accurate!<br>
         When you reach the magic number open your eyes.<br>
         Were you spot on, too fast, or too slow?<br>
-        Repeat play until you go Night Night.
+        Repeat play until you go <br> 
+        Night Night.
         </p>
         <form>
             <input type="button" value="Play" class="submit" id="playbtn">
 
-            <label for="count">Count Up to:</label><br>
+            <label for="count">The Magic Number:</label><br>
             <input type="number" id="count" name="time" value="60">
             <p class="units">Seconds</p>
 
+            <p id="wakelockalert"></p>
             <label for="time">Lock Screen After:</label><br>
             <input type="number" id="time" name="time" value="20">
-            <p class="units">Minutes</p>
+            <p class="units">Minutes of Play Time</p>
         </form>
     </div>
     <div class="timer" id="second">00</div>
