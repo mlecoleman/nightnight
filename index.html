@@ -23,8 +23,9 @@
             <button class="play" id="howto">Click To Play</button>
     </header>
     <h1>Night Night</h1>
-   <div class="instructions" id="instructions">
-       <p>Count sheep<br>
+    <div class="instructions" id="instructions">
+       <p class="howtoins">
+        Count sheep<br>
         the Night Night way!<br>
         Scroll down to confirm<br>
         your settings.<br>
@@ -33,27 +34,40 @@
         Count along to get<br>
         a feel for the timing.<br>
         Close your eyes<br>
-        and keep counting.<br>
+        and continue to count.<br>
         Keep your timing accurate!<br>
-        When your magic number<br>
-        is reached open your eyes.<br>
+        When you reach<br>
+        your magic number<br>
+        open your eyes.<br>
         Were you spot on,<br>
         too fast, or too slow?<br>
-        Repeat play until you go <br> 
+        Repeat play until you go<br> 
         Night Night.
         </p>
-        <form>
-            <label for="count">Magic Number - Count to:</label><br>
+        <p class="mlhowtoins">
+            Count sheep the Night Night way!<br>
+            Scroll down to confirm your settings.<br>
+            Click the play button to start the counter.<br>
+            Count along to get a feel for the timing.<br>
+            Close your eyes and continue to count.<br>
+            Keep your timing accurate!<br>
+            When you reach your magic number open your eyes.<br>
+            Were you spot on, too fast, or too slow?<br>
+            Repeat play until you go<br> 
+            Night Night.
+            </p>
+        <form class="form">
+            <label class="magicnumber" for="count">My Magic Number!<br>Count up to:</label><br>
             <input type="number" id="count" name="time" value="60">
             <p class="units">Seconds</p>
 
             <p id="wakelockalert"></p>
-            <label for="time">Lock Screen After:</label><br>
+
+            <label class="playtime" for="time">Lock Screen After:</label><br>
             <input type="number" id="time" name="time" value="20">
             <p class="units">Minutes of Play Time</p>
 
-            <input type="button" value="Play" class="submit" id="playbtn">
-
+            <input type="button" onclick="startLock()" value="Play" class="submit" id="playbtn">
         </form>
     </div>
     <div class="timer" id="second">00</div>

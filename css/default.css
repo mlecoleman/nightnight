@@ -52,7 +52,10 @@ h1
   margin-top: 0rem;
   margin-bottom: -.2rem;
 }
-
+.mldhowtoins
+{
+    display: none;
+}
 form
 {
   display: inline-block;
@@ -74,6 +77,16 @@ form label input, form label select
     border: 1px solid #bbb;
     margin-top: .2rem;
     border-radius: .2rem;
+}
+
+.magicnumber
+{
+    margin-top: 1rem;
+}
+
+.playtime
+{
+    margin-top: 1rem;
 }
 
 .units, #wakelockalert

@@ -1,3 +1,11 @@
+let seconds = 00;
+let outputSeconds = document.getElementById('second');
+let buttonStart = document.getElementById('playbtn');
+let countInput = document.getElementById('count');
+let timeInput = document.getElementById('time');
+let wakeLock = null;
+let Interval
+
 //Dropdown Div w/ instructions & settings options
 const targetDiv = document.getElementById("instructions");
 const howTo = document.getElementById("howto");
@@ -9,13 +17,7 @@ howTo.onclick = function () {
   }
 };
 
-//Counter
-let seconds = 00;
-let outputSeconds = document.getElementById('second');
-let buttonStart = document.getElementById('playbtn');
-let countInput = document.getElementById('count');
-let timeInput = document.getElementById('time');
-let Interval
+//Counter & Wake Lock
 
 buttonStart.addEventListener('click', () => {
   clearInterval(Interval);
@@ -32,38 +34,34 @@ function startTime(){
     seconds = 0;
   }
 }
- 
-//Play time user input & Wake Lock
 
-let wakeLock = null
- 
+
+
+/*
+function acquireLock(minutes){
+  minutes = Number(timeInput.value);
+  navigator.wakeLock.request("screen").then(lock => {
+    setTimeout(() => lock.release(), minutes * 60 * 1000);
+  });
+  console.log ('wake lock on');
+}
+*/
+
+//Wake Lock Alerts 
 if('wakeLock' in navigator) {
   //Wake Lock is supported
   document.getElementById("wakelockalert").innerText = '';
 } else {
-  document.getElementById("wakelockalert").innerText = 'WAKE LOCK IS NOT SUPPORTED - PLEASE USE A DIFFERENT BROWSER';
+  document.getElementById("wakelockalert").innerText = 'WAKE LOCK IS NOT SUPPORTED PLEASE USE A DIFFERENT BROWSER';
+  document.getElementById("time").disabled=true;
+  alert("Some of Night Night's features are not supported by your browser!  For the best experience use Chrome or Edge.")
+}
+
+async function startLock() {
+  wakeLock = await navigator.wakeLock.request("screen");
+  console.log("wake Lock is on");
+  
 }
 
 
-
-
-
-
-
-
-/*const acquireLock = async () => {
-  try {
-    wakeLock = await navigator.wakeLock.request('screen')
-  } catch (err) {
-    console.log(`${err.name}, ${err.message}`)
-  }
-}
-
-function tryKeepScreenAlive(minutes) {
-  navigator.wakeLock.request("screen").then(lock => {
-    setTimeout(() => lock.release(), minutes * 60 * 1000);
-  });
-}
-
-tryKeepScreenAlive(10);*/
 
