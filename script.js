@@ -17,7 +17,7 @@ howTo.onclick = function () {
   }
 };
 
-//Counter & Wake Lock
+//Counter
 
 buttonStart.addEventListener('click', () => {
   clearInterval(Interval);
@@ -35,8 +35,6 @@ function startTime(){
   }
 }
 
-
-
 /*
 function acquireLock(minutes){
   minutes = Number(timeInput.value);
@@ -47,7 +45,7 @@ function acquireLock(minutes){
 }
 */
 
-//Wake Lock Alerts 
+//Wake Lock 
 if('wakeLock' in navigator) {
   //Wake Lock is supported
   document.getElementById("wakelockalert").innerText = '';
@@ -60,7 +58,7 @@ if('wakeLock' in navigator) {
 async function startLock() {
   wakeLock = await navigator.wakeLock.request("screen");
   console.log("wake Lock is on");
-  
+
 }
 
 
