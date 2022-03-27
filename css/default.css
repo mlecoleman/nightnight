@@ -98,8 +98,9 @@ input
     background-color: rgb(255, 183, 0);
     margin-left: auto;
     margin-right: auto;
-    border-radius: 15px;
-    padding: 0px;
+    border-radius: 20px;
+    line-height: .6rem;
+    padding: .4rem 1rem;
 }
 
  .timer
@@ -107,10 +108,4 @@ input
     font-family: 'Digital-7 Mono', sans-serif;
     font-size: 9rem;
     line-height: 10rem;
-}
-.clearfix:after 
-{
-    content: "";
-    display: table;
-    clear: both;
 }

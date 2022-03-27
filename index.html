@@ -12,7 +12,6 @@
 
     <link href="http://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
     
-    <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/default.css" rel="stylesheet">
     <link href="./css/medium.css" rel="stylesheet">
     <link href="./css/large.css" rel="stylesheet">
@@ -25,20 +24,26 @@
     </header>
     <h1>Night Night</h1>
    <div class="instructions" id="instructions">
-       <p>Count sheep the Night Night way!<br>
-        The play button below starts the counter.<br>
-        Count along to get the timing right.<br>
-        Close your eyes & keep counting.<br>
+       <p>Count sheep<br>
+        the Night Night way!<br>
+        Scroll down to confirm<br>
+        your settings.<br>
+        Click the play button<br>
+        to start the counter.<br>
+        Count along to get<br>
+        a feel for the timing.<br>
+        Close your eyes<br>
+        and keep counting.<br>
         Keep your timing accurate!<br>
-        When you reach the magic number open your eyes.<br>
-        Were you spot on, too fast, or too slow?<br>
+        When your magic number<br>
+        is reached open your eyes.<br>
+        Were you spot on,<br>
+        too fast, or too slow?<br>
         Repeat play until you go <br> 
         Night Night.
         </p>
         <form>
-            <input type="button" value="Play" class="submit" id="playbtn">
-
-            <label for="count">The Magic Number:</label><br>
+            <label for="count">Magic Number - Count to:</label><br>
             <input type="number" id="count" name="time" value="60">
             <p class="units">Seconds</p>
 
@@ -46,6 +51,9 @@
             <label for="time">Lock Screen After:</label><br>
             <input type="number" id="time" name="time" value="20">
             <p class="units">Minutes of Play Time</p>
+
+            <input type="button" value="Play" class="submit" id="playbtn">
+
         </form>
     </div>
     <div class="timer" id="second">00</div>
