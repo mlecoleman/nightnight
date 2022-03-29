@@ -2,7 +2,6 @@ let seconds = 00;
 let outputSeconds = document.getElementById('second');
 let buttonStart = document.getElementById('playbtn');
 let countInput = document.getElementById('count');
-//let timeInput = document.getElementById('time');
 const timeInput = document.querySelector('#time');
 let wakeLockTimeout;
 let wakeLock;
@@ -19,18 +18,25 @@ howTo.onclick = function () {
   }
 };
 
-//Counter & Play Time/Wake Lock
+//Wake Lock Error
+if('wakeLock' in navigator) {
+  //Wake Lock is supported
+  document.getElementById("wakelockalert").innerText = '';
+} else {
+  document.getElementById("wakelockalert").innerText = 'SCREEN LOCK FUNCTION IS NOT SUPPORTED PLEASE USE A DIFFERENT BROWSER';
+  document.getElementById("time").disabled=true;
+  alert("Some of Night Night's features are not supported by your browser!  For the best experience check for compatible browsers here: https://caniuse.com/?search=wake%20lock")
+}
 
+//Counter & Play Time/Wake Lock
 async function startLock() {
   wakeLock = await navigator.wakeLock.request("screen");
-  wakeLockTimeout = setTimeout(releaseLock, +timeInput.value * 60 * 1000);
+  wakeLockTimeout = setTimeout(reloadPage, +timeInput.value * 60 * 1000);
   console.log("Wake Lock On");
 }
 
-async function releaseLock() {
-  clearTimeout (wakeLockTimeout);
-  await wakeLock.release();
-  console.log("Wake Lock Off");
+async function reloadPage() {
+  window.location.reload(true);
 }
 
 buttonStart.addEventListener('click', async (e) => {
@@ -40,12 +46,6 @@ buttonStart.addEventListener('click', async (e) => {
   targetDiv.style.display = "none";
 })
 
-/*buttonStart.addEventListener('click', () => {
-  clearInterval(Interval);
-  Interval = setInterval(startTime, 1000);
-  targetDiv.style.display = "none";
-})*/
-
 function startTime(){
   let count = Number(countInput.value);
   seconds++;
@@ -54,14 +54,4 @@ function startTime(){
   if(seconds >= count){
     seconds = 0;
   }
-}
-
-//Wake Lock 
-if('wakeLock' in navigator) {
-  //Wake Lock is supported
-  document.getElementById("wakelockalert").innerText = '';
-} else {
-  document.getElementById("wakelockalert").innerText = 'WAKE LOCK IS NOT SUPPORTED PLEASE USE A DIFFERENT BROWSER';
-  document.getElementById("time").disabled=true;
-  alert("Some of Night Night's features are not supported by your browser!  For the best experience use Chrome or Edge.")
 }
