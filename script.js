@@ -9,6 +9,7 @@ let Interval;
 
 //Dropdown Div w/ instructions & settings options
 const targetDiv = document.getElementById("instructions");
+const medlarDiv = document.getElementById("mlhowtoins");
 const howTo = document.getElementById("howto");
 howTo.onclick = function () {
   if (targetDiv.style.display !== "block") {
@@ -23,7 +24,7 @@ if('wakeLock' in navigator) {
   //Wake Lock is supported
   document.getElementById("wakelockalert").innerText = '';
 } else {
-  document.getElementById("wakelockalert").innerText = 'SCREEN LOCK FUNCTION IS NOT SUPPORTED PLEASE USE A DIFFERENT BROWSER';
+  document.getElementById("wakelockalert").innerText = 'SCREEN LOCK FUNCTION IS NOT SUPPORTED. For best experience please use a different browser.';
   document.getElementById("time").disabled=true;
   alert("Some of Night Night's features are not supported by your browser!  For the best experience check for compatible browsers here: https://caniuse.com/?search=wake%20lock")
 }
