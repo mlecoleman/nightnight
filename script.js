@@ -24,9 +24,9 @@ if('wakeLock' in navigator) {
   //Wake Lock is supported
   document.getElementById("wakelockalert").innerText = '';
 } else {
-  document.getElementById("wakelockalert").innerText = 'SCREEN LOCK FUNCTION IS NOT SUPPORTED. For best experience please use a different browser.';
+  document.getElementById("wakelockalert").innerText = 'AUTOMATIC SCREEN LOCK FEATURE IS NOT SUPPORTED IN YOUR BROWSER. To prevent your device from sleeping during play, you will need to manually change your device settings.';
   document.getElementById("time").disabled=true;
-  alert("Some of Night Night's features are not supported by your browser!  For the best experience check for compatible browsers here: https://caniuse.com/?search=wake%20lock")
+  alert("FYI: Some of Night Night's features are not supported by your browser.")
 }
 
 //Counter & Play Time/Wake Lock
