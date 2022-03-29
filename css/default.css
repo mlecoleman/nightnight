@@ -99,6 +99,11 @@ form label input, form label select
     padding: 0rem;
 }
 
+#wakelockalert
+{
+    color: red;
+}
+
 input
 {
     max-width: 10rem;
