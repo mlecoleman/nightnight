@@ -127,6 +127,7 @@ input
  .timer
 {
     font-family: 'Digital Numbers', sans-serif;
-    font-size: 7rem;
+    font-size: 5rem;
     line-height: 10rem;
+    font-kerning: none;
 }
