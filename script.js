@@ -2,14 +2,14 @@ let seconds = 00;
 let outputSeconds = document.getElementById('second');
 let buttonStart = document.getElementById('playbtn');
 let countInput = document.getElementById('count');
-const timeInput = document.querySelector('#time');
+let timeInput = document.querySelector('#time');
 let wakeLockTimeout;
 let wakeLock;
 let Interval;
 
+
 //Dropdown Div w/ instructions & settings options
 const targetDiv = document.getElementById("instructions");
-const medlarDiv = document.getElementById("mlhowtoins");
 const howTo = document.getElementById("howto");
 howTo.onclick = function () {
   if (targetDiv.style.display !== "block") {
@@ -18,6 +18,7 @@ howTo.onclick = function () {
     targetDiv.style.display = "none";
   }
 };
+
 
 //Wake Lock Error
 if('wakeLock' in navigator) {
@@ -46,7 +47,33 @@ buttonStart.addEventListener('click', async (e) => {
   Interval = setInterval(startTime, 1000);
   targetDiv.style.display = "none";
 })
+//
 
+function rememberInput(){
+  const magicnumber = localStorage.getItem("magicnumber")
+  const playtime = localStorage.getItem("playtime")
+  if(magicnumber){
+    document.getElementById("count").value = magicnumber
+  }
+  if(playtime){
+    document.getElementById("time").value = playtime
+  }
+  document.getElementById("count").addEventListener('focusout',afterCount)
+  document.getElementById("time").addEventListener('focusout',afterTime)
+}
+
+function afterCount(e) {
+  //console.log(e.target.value)
+  localStorage.setItem("magicnumber",e.target.value)
+}
+function afterTime(e) {
+  //console.log(e.target.value)
+  localStorage.setItem("playtime",e.target.value)
+}
+
+document.addEventListener("DOMContentLoaded", rememberInput)
+
+//
 function startTime(){
   let count = Number(countInput.value);
   seconds++;

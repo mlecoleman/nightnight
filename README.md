@@ -12,12 +12,13 @@ Another feature of note is that the colors chosen have no blue since blue light 
 
 Special Instructions:
 
-Wake Lock API is not supported in all browsers.  It is best supported by Chrome and Edge.  My web app will alert you if your browser is not supported, or you can check here for more information: https://caniuse.com/?search=wake%20lock
+Wake Lock API is not supported in all browsers.  It is best supported by desktop Chrome and Edge.  My web app will alert you if your browser is not supported, or you can check here for more information: https://caniuse.com/?search=wake%20lock
 
 3 required features:
 
-1. Implement a log that records errors, invalid inputs, or other important events and writes them to a text file:  My app will throw an alert if the user's browser isn't compatible with the Wake Lock feature.
+1. 
 
 2.
+
 3.
 
