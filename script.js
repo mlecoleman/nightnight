@@ -30,7 +30,7 @@ if('wakeLock' in navigator) {
   alert("FYI: Some of Night Night's features are not supported by your browser.")
 }
 
-//Counter & Play Time/Wake Lock
+// Play Time/Wake Lock
 async function startLock() {
   wakeLock = await navigator.wakeLock.request("screen");
   wakeLockTimeout = setTimeout(reloadPage, +timeInput.value * 60 * 1000);
@@ -41,14 +41,7 @@ async function reloadPage() {
   window.location.reload(true);
 }
 
-buttonStart.addEventListener('click', async (e) => {
-  startLock();
-  clearInterval(Interval);
-  Interval = setInterval(startTime, 1000);
-  targetDiv.style.display = "none";
-})
-//
-
+//Store user inputs in Local Storage
 function rememberInput(){
   const magicnumber = localStorage.getItem("magicnumber")
   const playtime = localStorage.getItem("playtime")
@@ -67,13 +60,43 @@ function afterCount(e) {
   localStorage.setItem("magicnumber",e.target.value)
 }
 function afterTime(e) {
-  //console.log(e.target.value)
   localStorage.setItem("playtime",e.target.value)
 }
 
 document.addEventListener("DOMContentLoaded", rememberInput)
 
-//
+//Countdown
+const countdown = () => {
+  const gradingDay = new Date("April 15, 2022 00:00:00").getTime();
+  const now = new Date().getTime();
+  const dif = gradingDay - now;
+  const sec = 1000;
+  const min = sec * 60;
+  const hour = min * 60;
+  const day = hour * 24;
+  const countdownDay = Math.floor(dif / day);
+  const countdownHour = Math.floor((dif % day) / hour);
+  const countdownMin = Math.floor((dif % hour) / min);
+  const countdownSec = Math.floor((dif % min) / sec);
+
+  document.querySelector(".day").innerText = countdownDay;
+  document.querySelector(".hour").innerText = countdownHour;
+  document.querySelector(".min").innerText = countdownMin;
+  document.querySelector(".sec").innerText = countdownSec;
+};
+
+setInterval(countdown, 1000);
+
+countdown();
+
+//Start counter
+buttonStart.addEventListener('click', async (e) => {
+  startLock();
+  clearInterval(Interval);
+  Interval = setInterval(startTime, 1000);
+  targetDiv.style.display = "none";
+})
+
 function startTime(){
   let count = Number(countInput.value);
   seconds++;

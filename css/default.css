@@ -124,6 +124,34 @@ input
     padding: .4rem 1rem;
 }
 
+/* Countdown */
+
+.grading-date
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.countdown
+{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+
+.announcement
+{
+    font-size: 1rem;
+}
+
+h3
+{
+    font-size: 1rem;
+}
+
  .timer
 {
     font-family: 'Digital Numbers', sans-serif;

@@ -57,17 +57,42 @@
             </p>
         <form class="form">
             <label class="magicnumber" for="count">My Magic Number!<br>Count up to:</label><br>
-            <input type="number" id="count" name="time" value="">
+            <input type="number" id="count" name="time" required value="60">
             <p class="units">Seconds</p>
 
             <p id="wakelockalert"></p>
 
             <label class="playtime" for="time">Lock Screen After:</label><br>
-            <input type="number" id="time" name="time" value="">
+            <input type="number" id="time" name="time" required value="20">
             <p class="units">Minutes of Play Time</p>
 
             <input type="button" onclick="startLock()" value="Play" class="submit" id="playbtn">
         </form>
+        <section class="grading-date">
+            <div>
+                <h2 class="announcement">Code Louisville will<br>
+                    grade this website by<br>
+                    April 15th, 2022!</h2>
+                <div class="countdown">
+                    <div class="display-day">
+                        <h3 class="day">Time</h3>
+                        <h3>Day</h3>
+                    </div>
+                    <div class="display-hour">
+                        <h3 class="hour">Time</h3>
+                        <h3>Hour</h3>
+                    </div>
+                    <div class="display-min">
+                        <h3 class="min">Time</h3>
+                        <h3>Min</h3>
+                    </div>
+                    <div class="display-sec">
+                        <h3 class="sec">Time</h3>
+                        <h3>Sec</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <div class="timer" id="second">00</div>
     <script src="./script.js"></script>

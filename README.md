@@ -16,9 +16,20 @@ Wake Lock API is not supported in all browsers.  It is best supported by desktop
 
 3 required features:
 
-1. 
+1. Create and use a function that accepts two or more values (parameters), calculates or determines a new value based on those inputs, and returns a new value
 
-2.
+My time counter takes in two inputs and resets after a certain number of seconds has been counted through, and also refreshes the page after that counter has repeated itself for the number of minutes input by the user.  The value updates and changes based on user input.
 
-3.
 
+2.Create a form and save the values (on click of Submit button) to an external file 
+You must show us or document where that information is being stored so we can confirm that it’s being saved/persisted
+
+Form inputs are saved in local storage, and when the page reloads the form will be populated with the inputs from the previous time the user added inputs to the form.
+
+
+3. Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)
+
+My mentor coudn't guarantee I would pass because while he felt I did a cool and interesting project and he felt that I showed an understanding of JavaScript... I didn't technically have three of the officially listed requirements. So! I put this timer on the drop down menu just to make sure I can pass. This timer counts down to April 15th because of this sentence received in a recent Code Louisvill e-mail: "So long as you turn in a project, you will hear from us by April 15th on whether you successfully completed the course or not."
+
+
+Hope I pass!!! XD  Thanks Code Louisville! <3
