@@ -8,7 +8,9 @@ Clicking on the "How To Play" link opens a menu with instructions and an input f
 
 Also present is a countdown to April 15th, which is when Code Louisville has promised we will hear back about pass fail status. 
 
-Pressing the Play button closes the dropdown, and starts the counter.  The counter will increase every second until it counts to the number specified by the user, and then it will reset and repeat the count.  Once the specified total play time is reached Wake Lock will be released and the phone/computer/browser will sleep and dim like normal.
+Pressing the Play button closes the dropdown, and starts the counter.  The counter will increase every second until it counts to the number specified by the user, and then it will reset and repeat the count.  Once the specified total play time is reached, the page will refresh which releases Wake Lock and resets the timer to 00.
+
+Local storage is also used so that when a user returns, the users previous form inputs will be saved an reflected in the form.
 
 Another feature of note is that the colors chosen have no blue since blue light is thought to make it difficult to sleep.
 
@@ -20,10 +22,10 @@ Wake Lock API is not supported in all browsers.  It is best supported by desktop
 
 1. Create and use a function that accepts two or more values (parameters), calculates or determines a new value based on those inputs, and returns a new value
 
-My time counter takes in two inputs and resets after a certain number of seconds has been counted through, and also refreshes the page after that counter has repeated itself for the number of minutes input by the user.  The value updates and changes based on user input.
+My time counter takes in two user inputs and resets after a certain number of seconds has been counted through, and also refreshes the page after that counter has repeated itself for the number of minutes input by the user.  The value updates and changes based on user input.
 
 
-2.Create a form and save the values (on click of Submit button) to an external file 
+2. Create a form and save the values (on click of Submit button) to an external file 
 You must show us or document where that information is being stored so we can confirm that it’s being saved/persisted
 
 Form inputs are saved in local storage, and when the page reloads the form will be populated with the inputs from the previous time the user added inputs to the form.
